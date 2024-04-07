@@ -4,21 +4,12 @@ import React, { useRef, useEffect } from "react";
 import SectionHeading from "./section-heading";
 import { motion, useInView } from "framer-motion";
 import { useActiveSectionContext } from "./active-section-context";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function About() {
-    const ref = useRef(null);
-    const isInView = useInView(ref, {
-        amount: 0.5,
-    });
-    const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
+    const { ref } = useSectionInView("About");
 
-    useEffect(() => {
-        if (isInView && Date.now() - timeOfLastClick > 1000) {
-            setActiveSection("About");
-        }
-    }, [isInView, setActiveSection, timeOfLastClick]);
-
-    console.log(isInView);
+    console.log(useInView);
     return (
         <motion.section
             ref={ref}

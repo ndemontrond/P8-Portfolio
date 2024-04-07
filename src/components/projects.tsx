@@ -6,18 +6,9 @@ import { projectsData } from "@/lib/data";
 import Project from "./project";
 import { useActiveSectionContext } from "./active-section-context";
 import { useInView } from "framer-motion";
+import { useSectionInView } from "@/lib/hooks";
 export default function Projects() {
-    const ref = useRef(null);
-    const isInView = useInView(ref, {
-        amount: 0.75,
-    });
-    const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
-
-    useEffect(() => {
-        if (isInView && Date.now() - timeOfLastClick > 1000) {
-            setActiveSection("Projects");
-        }
-    }, [isInView, setActiveSection, timeOfLastClick]);
+    const { ref } = useSectionInView("Projects", 0.5);
 
     return (
         <section ref={ref} id="projects" className="scroll-mt-28">
