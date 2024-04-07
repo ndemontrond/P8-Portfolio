@@ -10,6 +10,8 @@ export const ActiveSectionContext = createContext<{
     setActiveSection: React.Dispatch<
         React.SetStateAction<(typeof links)[number]["name"]>
     >;
+    timeOfLastClick: number;
+    setTimeOfLastClick: React.Dispatch<React.SetStateAction<number>>
 }| null>(null);
 
 export default function ActiveSectionContextProvider({
@@ -19,10 +21,11 @@ export default function ActiveSectionContextProvider({
 }) {
     const [activeSection, setActiveSection] =
         useState<(typeof links)[number]["name"]>("Home");
+    const [timeOfLastClick, setTimeOfLastClick] = useState(0); // used to track the last click time to disable the observed temporalry when the user clicks on a link
 
     return (
         <ActiveSectionContext.Provider
-            value={{ activeSection, setActiveSection }}
+            value={{ activeSection, setActiveSection, timeOfLastClick, setTimeOfLastClick }}
         >
             {children}
         </ActiveSectionContext.Provider>
