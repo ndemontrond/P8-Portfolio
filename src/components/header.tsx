@@ -1,10 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useContext, useState } from "react";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
+import { ActiveSectionContext, useActiveSectionContext } from "./active-section-context";
 export default function Header() {
+    const { activeSection, setActiveSection } = useActiveSectionContext();
+
     return (
         <header className="z-[999] relative">
             <motion.div
@@ -23,13 +26,30 @@ export default function Header() {
                             animate={{ y: 0, opacity: 1 }}
                         >
                             <Link
-                                className={
-                                    "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300"
-
-                                }
+                                className={`flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition ${
+                                    activeSection === link.name
+                                        ? "text-gray-950 "
+                                        : ""
+                                }`}
                                 href={link.hash}
+                                onClick={() => {
+                                    setActiveSection(link.name);
+                                    // setTimeOfLastClick(Date.now());
+                                }}
                             >
                                 {link.name}
+
+                                {link.name === activeSection && (
+                                    <motion.span
+                                        className="bg-gray-100 rounded-full absolute inset-0 -z-10"
+                                        layoutId="activeSection"
+                                        transition={{
+                                            type: "spring",
+                                            stiffness: 380,
+                                            damping: 30,
+                                        }}
+                                    ></motion.span>
+                                )}
                             </Link>
                         </motion.li>
                     ))}
