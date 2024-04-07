@@ -1,6 +1,9 @@
 // src/lib/data.ts
 
 import React from "react";
+import { CgWorkAlt } from "react-icons/cg";
+import { FaReact } from "react-icons/fa";
+import { LuGraduationCap } from "react-icons/lu";
 import placeholder1 from "@/../public/placeholder1.jpg";
 import placeholder2 from "@/../public/placeholder2.jpg";
 import placeholder3 from "@/../public/placeholder3.jpg";
@@ -32,6 +35,30 @@ export const links = [
     },
 ] as const;
 
+export const experiencesData = [
+    {
+        title: "",
+        location: "",
+        description: "",
+        icon: React.createElement(LuGraduationCap),
+        date: "2019",
+    },
+    {
+        title: "",
+        location: "",
+        description: "",
+        icon: React.createElement(CgWorkAlt),
+        date: "2019 - 2021",
+    },
+    {
+        title: "",
+        location: "",
+        description: "",
+        icon: React.createElement(FaReact),
+        date: "2021 - present",
+    },
+] as const;
+
 export const projectsData = [
     {
         title: "placeholder1",
@@ -54,4 +81,21 @@ export const projectsData = [
         tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
         imageUrl: placeholder3,
     },
+] as const;
+
+export const skillsData = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Git",
+    "Tailwind",
+    "MongoDB",
+    "Express",
+    "PostgreSQL",
+    "Python",
+    "Framer Motion",
 ] as const;
