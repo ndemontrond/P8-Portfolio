@@ -6,6 +6,7 @@ import About from "@/components/about";
 import React from "react";
 import Projects from "@/components/projects";
 import Skills from "@/components/skills";
+import Experiences from "@/components/experience";
 
 export default function Home() {
     return (
@@ -15,6 +16,7 @@ export default function Home() {
             <About />
             <Projects />
             <Skills />
+            <Experiences />
         </main>
     );
 }
