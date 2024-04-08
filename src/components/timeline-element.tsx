@@ -4,9 +4,17 @@ import React from "react";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
-export default function TimelineElement(
-    
-    {
+type TimelineElementProps = {
+    isInView: boolean;
+    theme: string;
+    date: string;
+    icon: JSX.Element;
+    title: string;
+    location: string;
+    description: string;
+};
+
+export default function TimelineElement({
     isInView,
     theme,
     date,
@@ -14,7 +22,7 @@ export default function TimelineElement(
     title,
     location,
     description,
-}) {
+}: TimelineElementProps) {
     return (
         <VerticalTimelineElement
             visible={isInView}
@@ -35,12 +43,15 @@ export default function TimelineElement(
             date={date}
             icon={icon}
             iconStyle={{
-                background:
-                    theme === "light" ? "white" : "rgba(255, 255, 255, 0.15)",
+                background: theme === "light" ? "white" : "#111827",
                 fontSize: "1.5rem",
+                boxShadow:
+                    theme === "light"
+                        ? "0 0 0 4px #e5e7eb"
+                        : "0 0 0 4px #1d2432",
             }}
+            iconClassName="border-black shadow-none shadow-black"
             dateClassName="font-medium text-sm text-gray-700 dark:text-white/75"
-            // className="mb-6"
             className="vertical-timeline-element--work"
         >
             <h3 className="font-semibold capitalize">{title}</h3>
