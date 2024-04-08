@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import ActiveSectionContextProvider from "@/components/active-section-context";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,12 +27,8 @@ export default function RootLayout({
                 <ActiveSectionContextProvider>
                     <Header />
                     {children}
+                    <Footer />
                 </ActiveSectionContextProvider>
-                <footer
-                    style={{ backgroundColor: "ghostwhite", padding: "1rem" }}
-                >
-                    <p>Footer</p>
-                </footer>
             </body>
         </html>
     );
