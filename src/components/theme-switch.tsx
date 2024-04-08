@@ -25,6 +25,8 @@ export default function ThemeSwitch() {
 
         if (storedTheme) {
             setTheme(storedTheme);
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            setTheme("dark");            
         }
     }, []);
 
