@@ -94,7 +94,7 @@ export default function Intro() {
                 </a>
 
                 <a
-                    className="bg-white p-4  text-gray-700 flex items-center gap-2 rounded-full focus:scale-115 hover:scale-115 hover:text-gray-950 active:scale-105 transition cursor-pointer border border-black/10"
+                    className="bg-white p-4  text-gray-700 flex items-center gap-2 rounded-full focus:scale-115 hover:scale-115 hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack"
                     href="https://www.linkedin.com/"
                     target="_blank"
                 >
@@ -102,7 +102,7 @@ export default function Intro() {
                 </a>
 
                 <a
-                    className="bg-white p-4  text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-115 hover:scale-115 hover:text-gray-950 active:scale-105 transition cursor-pointer border border-black/10"
+                    className="bg-white p-4  text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-115 hover:scale-115 hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack"
                     href="https://github.com/"
                     target="_blank"
                 >
