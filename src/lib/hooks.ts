@@ -1,6 +1,8 @@
+// custom hooks
+
 import { useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { useActiveSectionContext } from "@/components/active-section-context";
+import { useActiveSectionContext } from "@/context/active-section-context";
 import type { SectionName } from "./types";
 
 export function useSectionInView(sectionName: SectionName, amount = 0.75) {

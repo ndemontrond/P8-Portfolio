@@ -3,6 +3,7 @@ export const validateString = (
     maxLength: number
 ): value is string => {
     if (!value || typeof value !== "string" || value.length > maxLength) {
+        console.log("Invalid string", value, maxLength);
         return false;
     }
 

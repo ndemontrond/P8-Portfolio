@@ -39,21 +39,24 @@ export const experiencesData = [
     {
         title: "",
         location: "",
-        description: "",
+        description:
+            "lorem ipsum dolor sit amet consectetur adipiscing elit sodales",
         icon: React.createElement(LuGraduationCap),
         date: "2019",
     },
     {
-        title: "",
-        location: "",
-        description: "",
+        title: "title placeholder",
+        location: "location placeholder",
+        description:
+            "lorem ipsum dolor sit amet consectetur adipiscing elit sodales",
         icon: React.createElement(CgWorkAlt),
         date: "2019 - 2021",
     },
     {
         title: "",
         location: "",
-        description: "",
+        description:
+            "lorem ipsum dolor sit amet consectetur adipiscing elit sodales",
         icon: React.createElement(FaReact),
         date: "2021 - present",
     },
