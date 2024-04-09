@@ -7,6 +7,10 @@ import { LuGraduationCap } from "react-icons/lu";
 import placeholder1 from "@/../public/placeholder1.jpg";
 import placeholder2 from "@/../public/placeholder2.jpg";
 import placeholder3 from "@/../public/placeholder3.jpg";
+import monvieuxgrimoire from "@/../public/monvieuxgrimoire.png";
+import kasa from "@/../public/kasa.png";
+import sophiebluel from "@/../public/sophiebluel.png";
+import booki from "@/../public/booki.png";
 
 export const links = [
     {
@@ -37,52 +41,46 @@ export const links = [
 
 export const experiencesData = [
     {
-        title: "",
-        location: "",
-        description:
-            "lorem ipsum dolor sit amet consectetur adipiscing elit sodales",
+        title: "Web developer formation",
+        location: "OpenClassroom",
+        description: "Level 6 RNCP Title",
         icon: React.createElement(LuGraduationCap),
-        date: "2019",
-    },
-    {
-        title: "title placeholder",
-        location: "location placeholder",
-        description:
-            "lorem ipsum dolor sit amet consectetur adipiscing elit sodales",
-        icon: React.createElement(CgWorkAlt),
-        date: "2019 - 2021",
-    },
-    {
-        title: "",
-        location: "",
-        description:
-            "lorem ipsum dolor sit amet consectetur adipiscing elit sodales",
-        icon: React.createElement(FaReact),
-        date: "2021 - present",
+        date: "2023 - present",
     },
 ] as const;
 
 export const projectsData = [
     {
-        title: "placeholder1",
+        title: "mon vieux grimoire",
         description:
-            "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-        tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-        imageUrl: placeholder1,
+            "Backend for a book rating site using Node.js, Express, and MongoDB, implementing CRUD operations, secure data handling, and user authentication.",
+        tags: ["Node.js", "Express", "MongoDB", "CRUD Operations", "API"],
+        imageUrl: monvieuxgrimoire,
+        link: "https://github.com/ndemontrond/P7-Dev-Web-livres",
     },
     {
-        title: "placeholder2",
+        title: "kasa",
         description:
-            "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-        tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-        imageUrl: placeholder2,
+            "Frontend for a React application using React Router, focusing on data presentation, React components, and modern user experience.",
+        tags: ["React", "Router", "Components", "UX", "Data Presentation"],
+        imageUrl: kasa,
+        link: "https://github.com/ndemontrond/kasa-openclassrooms",
     },
     {
-        title: "placeholder3",
+        title: "sophie bluel",
         description:
-            "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-        tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-        imageUrl: placeholder3,
+            "A dynamic interior design website with JavaScript, integrating user events, DOM manipulation, and API communication.",
+        tags: ["JavaScript", "User Event", "DOM Manipulation", "API"],
+        imageUrl: sophiebluel,
+        link: "https://github.com/ndemontrond/Portfolio-architecte-sophie-bluel",
+    },
+    {
+        title: "booki",
+        description:
+            "A responsive travel agency homepage using HTML/CSS, emphasizing user experience across devices.",
+        tags: ["HTML", "CSS", "Git"],
+        imageUrl: booki,
+        link: "https://github.com/ndemontrond/project-booki",
     },
 ] as const;
 
@@ -98,7 +96,9 @@ export const skillsData = [
     "Tailwind",
     "MongoDB",
     "Express",
-    "PostgreSQL",
+    "API",
     "Python",
     "Framer Motion",
+    "CRUD",
+    "Sass",
 ] as const;

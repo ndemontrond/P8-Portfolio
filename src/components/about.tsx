@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import SectionHeading from "./section-heading";
 import { motion, useInView } from "framer-motion";
-import { useActiveSectionContext } from "../context/active-section-context";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function About() {
@@ -21,17 +20,25 @@ export default function About() {
         >
             <SectionHeading>About Me</SectionHeading>
             <p className="mb-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores magnam praesentium fuga ab pariatur impedit, suscipit
-                repellendus qui! Veritatis quos veniam ab vel obcaecati suscipit
-                ex dolores earum quisquam repudiandae.
+                My name is <span className="font-bold">Nicolas</span>, and as a
+                junior web developer, , I&apos;m driven by a curiosity to
+                explore and a passion to create outstanding digital experiences.
+                With a solid grasp of HTML, CSS, and JavaScript, I&apos;m
+                currently expanding my skills with advanced frameworks such as{" "}
+                <span className="underline">React</span> and{" "}
+                <span className="underline">Next.Js</span> to build dynamic,
+                user-centric web applications. I thrive on problem-solving
+                challenges and strive to push creative boundaries to deliver
+                polished, innovative solutions.
             </p>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Similique aut nobis, numquam quas voluptas fugit repellendus
-                quisquam, facilis quibusdam nihil, voluptate minus perferendis
-                praesentium reiciendis eligendi officiis inventore. Eum,
-                numquam!
+                Beyond technical expertise, I bring a strong foundation in{" "}
+                <span className="italic">UX/UI</span> principles, ensuring the
+                projects I undertake not only look visually appealing but also
+                provide seamless, intuitive user experiences. Continuously
+                seeking to expand my knowledge, I actively engage in online
+                courses and community to remain updated on industry trends and
+                best practices.
             </p>
         </motion.section>
     );
