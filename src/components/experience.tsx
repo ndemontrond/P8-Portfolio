@@ -1,76 +1,4 @@
-// // experience component
-
-// "use client";
-
-// import React from "react";
-// import SectionHeading from "./section-heading";
-// import { useSectionInView } from "@/lib/hooks";
-// import {
-//     VerticalTimeline,
-//     VerticalTimelineElement,
-// } from "react-vertical-timeline-component";
-// import "react-vertical-timeline-component/style.min.css";
-// import { experiencesData } from "@/lib/data";
-// import { useTheme } from "@/context/theme-context";
-// export default function Experience() {
-//     const { ref, isInView } = useSectionInView("Experience", 0.5);
-//     const { theme } = useTheme();
-
-//     return (
-//         <section
-//             id="experience"
-//             ref={ref}
-//             className="scroll-mt-28 mb-28 sm:mb-40"
-//         >
-//             <SectionHeading>My experiences</SectionHeading>
-//             <VerticalTimeline lineColor="">
-//                 {experiencesData.map((item, index) => (
-//                     <VerticalTimelineElement
-//                         visible={isInView}
-//                         key={index}
-//                         contentStyle={{
-//                             background:
-//                                 theme === "light"
-//                                     ? "#f3f4f6"
-//                                     : "rgba(255, 255, 255, 0.05)",
-//                             boxShadow: "none",
-//                             border: "1px solid rgba(0, 0, 0, 0.05)",
-//                             textAlign: "left",
-//                             padding: "1.3rem 2rem",
-//                         }}
-//                         contentArrowStyle={{
-//                             borderRight:
-//                                 theme === "light"
-//                                     ? "0.4rem solid  #9ca3af"
-//                                     : "0.4rem solid  rgba(255, 255, 255, 0.5)",
-//                         }}
-//                         date={item.date}
-//                         icon={item.icon}
-//                         iconStyle={{
-//                             background:
-//                                 theme === "light"
-//                                     ? "white"
-//                                     : "rgba(255, 255, 255, 0.15)",
-//                             fontSize: "1.5rem",
-//                         }}
-//                         dateClassName="font-medium text-sm text-gray-700 dark:text-white/75"
-//                         className="mb-6"
-//                     >
-//                         <h3 className="font-semibold capitalize">
-//                             {item.title}
-//                         </h3>
-//                         <p className="font-normal !mt-0">{item.location}</p>
-//                         <p className="font-normal !mt-1 text-gray-700 dark:text-white/75">
-//                             {item.description}
-//                         </p>
-//                     </VerticalTimelineElement>
-//                 ))}
-//             </VerticalTimeline>
-//         </section>
-//     );
-// }
-
-// ExperienceTimeline.js
+// ExperienceTimeline.tsx
 
 "use client";
 
@@ -81,13 +9,18 @@ import {
     VerticalTimeline,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { experiencesData } from "@/lib/data";
+import { text } from "@/lib/data";
 import { useTheme } from "@/context/theme-context";
 import TimelineElement from "./timeline-element";
+import { useLanguage } from "@/context/language-context";
 
 export default function ExperienceTimeline() {
     const { ref, isInView } = useSectionInView("Experience", 0.5);
     const { theme } = useTheme();
+    const { language } = useLanguage();
+
+    // Get the language-specific text based on the current language
+    const currentText = text[language];
 
     return (
         <section
@@ -95,9 +28,9 @@ export default function ExperienceTimeline() {
             ref={ref}
             className="scroll-mt-28 mb-28 sm:mb-40 leading-8 place-self-stretch"
         >
-            <SectionHeading>My experiences</SectionHeading>
+            <SectionHeading>{currentText.experienceSectionHeading}</SectionHeading>
             <VerticalTimeline lineColor="">
-                {experiencesData.map((item, index) => (
+                {currentText.experiencesData.map((item, index) => (
                     <TimelineElement
                         key={index}
                         isInView={isInView}

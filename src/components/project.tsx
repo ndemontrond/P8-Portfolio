@@ -1,22 +1,30 @@
 "use client";
 
-import { projectsData } from "@/lib/data";
+// import { projectsData } from "@/lib/data";
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll } from "framer-motion";
-import { LuExternalLink } from "react-icons/lu"; 
+import { LuExternalLink } from "react-icons/lu";
+import { useLanguage } from "@/context/language-context";
+import { text } from "@/lib/data";
+
 export default function Project({
     title,
     description,
     tags,
     imageUrl,
     link,
-}: (typeof projectsData)[number]) {
+}: (typeof currentText.projectsData)[number]) {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
         offset: ["0 1", "1.33 1"],
     });
+
+    const { language } = useLanguage();
+
+    // Get the language-specific text based on the current language
+    const currentText = text[language];
 
     return (
         <motion.article

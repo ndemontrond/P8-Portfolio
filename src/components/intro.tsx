@@ -9,9 +9,42 @@ import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useActiveSectionContext } from "../context/active-section-context";
 import { useSectionInView } from "@/lib/hooks";
+import { useLanguage } from "@/context/language-context";
 export default function Intro() {
     const { ref } = useSectionInView("Home", 0.5);
     const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+
+    const { language } = useLanguage();
+
+    // Define language-specific text
+    const text = {
+        français: {
+            intro1: "Bonjour, je m'appelle Nicolas.",
+            intro2: "Je suis un ",
+            intro3: "développeur junior. ",
+            intro4: "J'apprécie créer des ",
+            intro5: "sites et applications. ",
+            intro6: "Je me concentre sur ",
+            intro7: "React (Next.js)",
+            contact: "Me contacter ici",
+            cv: "Télécharger CV",
+        },
+        english: {
+            intro1: "Hello, I'm Nicolas.",
+            intro2: "I'm a ",
+            intro3: "junior developer. ",
+            intro4: "I enjoy building ",
+            intro5: "sites & apps. ",
+            intro6: "My focus is ",
+            intro7: "React (Next.js)",
+            contact: "Contact me here",
+            cv: "Download CV",
+        },
+    };
+
+    // Get the language-specific text based on the current language
+    const currentText = text[language];
+
     return (
         <section
             ref={ref}
@@ -60,10 +93,13 @@ export default function Intro() {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
             >
-                <span className="font-bold">Hello, I&apos;m Nicolas.</span>{" "}
-                I&apos;m a <span className="font-bold">junior developer</span>.
-                I enjoy building <span className="italic">sites & apps</span>.
-                My focus is <span className="underline">React (Next.js)</span>.
+                <span className="font-bold">{currentText.intro1}</span>{" "}
+                {currentText.intro2}
+                <span className="font-bold">{currentText.intro3}</span>
+                {currentText.intro4}
+                <span className="italic">{currentText.intro5}</span>
+                {currentText.intro6}
+                <span className="underline">{currentText.intro7}</span>.
             </motion.h1>
 
             <motion.div
@@ -80,7 +116,7 @@ export default function Intro() {
                         setTimeOfLastClick(Date.now());
                     }}
                 >
-                    Contact me here
+                    {currentText.contact}
                     <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
                 </Link>
 
@@ -89,7 +125,7 @@ export default function Intro() {
                     href="/CV.pdf"
                     download
                 >
-                    Download CV
+                    {currentText.cv}
                     <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
                 </a>
 

@@ -2,17 +2,23 @@
 
 import React, { Fragment } from "react";
 import SectionHeading from "./section-heading";
-import { projectsData } from "@/lib/data";
+import { text } from "@/lib/data";
 import Project from "./project";
 import { useSectionInView } from "@/lib/hooks";
+import { useLanguage } from "@/context/language-context";
 export default function Projects() {
     const { ref } = useSectionInView("Projects", 0.5);
 
+    const { language } = useLanguage();
+
+    // Get the language-specific text based on the current language
+    const currentText = text[language];
+
     return (
         <section ref={ref} id="projects" className="scroll-mt-28 mb-28">
-            <SectionHeading>My projects</SectionHeading>
+            <SectionHeading>{currentText.projectSectionHeading}</SectionHeading>
             <div>
-                {projectsData.map((project, index) => (
+                {currentText.projectsData.map((project, index) => (
                     <Fragment key={index}>
                         <Project {...project} />
                     </Fragment>
