@@ -228,15 +228,3 @@ export const text = {
         ],
     },
 };
-
- // Default to French
-
-
-// // Update experiencesData based on the language index
-// experiencesData[0] = {
-//     title: currentText.experiencesData[languageIndex].title,
-//     location: currentText.experiencesData[languageIndex].location,
-//     description: currentText.experiencesData[languageIndex].description,
-//     icon: React.createElement(LuGraduationCap),
-//     date: currentText.experiencesData[languageIndex].date,
-// };
