@@ -35,10 +35,6 @@ export default function LanguageContextProvider({
     };
 
     useEffect(() => {
-        // const userLanguage = navigator.language || navigator.userLanguage;
-        // const primaryLanguage = userLanguage.split("-")[0];
-        // console.log(primaryLanguage);
-
         const localLanguage = window.localStorage.getItem(
             "language"
         ) as Language | null;
@@ -50,10 +46,6 @@ export default function LanguageContextProvider({
                 document.documentElement.classList.add("english");
             }
         }
-        //else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        //     setTheme("dark");
-        //     document.documentElement.classList.add("dark");
-        // }
     }, []);
 
     return (
@@ -79,27 +71,3 @@ export function useLanguage() {
 
     return context;
 }
-
-// export const LanguageProvider: React.FC<LanguageProviderProps> = ({
-//     children,
-// }) => {
-//     const [language, setLanguage] = useState("English");
-
-//     const handleChangeLanguage = (selectedLanguage: string) => {
-//         setLanguage(selectedLanguage);
-//     };
-
-//     return (
-//         <LanguageContext.Provider value={{language, handleChangeLanguage}}>
-//             {children}
-//         </LanguageContext.Provider>
-//     );
-// };
-
-// export function useLanguage() {
-//     const context = useContext(LanguageContext);
-//     if (!context) {
-//         throw new Error("useLanguage must be used within a LanguageProvider");
-//     }
-//     return context;
-// }
